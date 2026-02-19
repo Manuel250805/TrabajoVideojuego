@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ci6m61mtn8527"]
+
+[ext_resource type="Script" uid="uid://dg5gbs4rejoy7" path="res://moneda/Moneda.gd" id="1_rnkv7"]
+[ext_resource type="Texture2D" path="res://fondo/player/img/moneda.png" id="2_18dbo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_olpb6"]
+radius = 12.369317
+
+[node name="Moneda" type="Area2D" unique_id=2010737646]
+script = ExtResource("1_rnkv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1922855849]
+z_index = 2
+position = Vector2(1039, 387)
+shape = SubResource("CircleShape2D_olpb6")
+
+[node name="moneda" type="Sprite2D" parent="." unique_id=1935631101]
+position = Vector2(1040, 387)
+texture = ExtResource("2_18dbo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
