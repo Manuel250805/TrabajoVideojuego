@@ -1,11 +1,9 @@
 [gd_scene format=4 uid="uid://dhknw2nwgmqny"]
 
-[ext_resource type="Texture2D" uid="uid://cumrat7l8cv8i" path="res://plataformas/imgComunes/Gemini_Generated_Image_uip99cuip99cuip9 (2).png" id="1_0qi51"]
+[ext_resource type="Texture2D" uid="uid://cumrat7l8cv8i" path="res://plataformas-manu/imgComunes/Gemini_Generated_Image_uip99cuip99cuip9 (2).png" id="1_0qi51"]
+[ext_resource type="Texture2D" uid="uid://t6n8noyfsgbd" path="res://fondo/img/wmremove-transformed.png" id="1_dq6rq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3ne6k"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2r0qx"]
-load_path = "res://.godot/imported/wmremove-transformed.png-3c20188f13e8b78c77b33a3b0f1bc711.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0lpo"]
 size = Vector2(1077, 56)
@@ -1056,7 +1054,7 @@ physics_material_override = SubResource("PhysicsMaterial_3ne6k")
 [node name="img_fondo" type="Sprite2D" parent="." unique_id=708758551]
 position = Vector2(575.74994, 320.75)
 scale = Vector2(0.78023094, 0.89701706)
-texture = SubResource("CompressedTexture2D_2r0qx")
+texture = ExtResource("1_dq6rq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1927951931]
 z_index = 2
