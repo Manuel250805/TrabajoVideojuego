@@ -1,7 +1,8 @@
 [gd_scene format=4 uid="uid://by0468frhcooo"]
 
-[ext_resource type="Texture2D" uid="uid://bq57ts7pxfe8y" path="res://floor_real/img/mazmorra_real_claudia.jpeg" id="1_cxrwt"]
+[ext_resource type="Texture2D" uid="uid://dbfbav8188eas" path="res://floor_real/img/mazmorra_real_claudia.jpeg" id="1_cxrwt"]
 [ext_resource type="Texture2D" uid="uid://dm3f63vqv0lkm" path="res://plataformas/img/plataformas.png" id="2_cxrwt"]
+[ext_resource type="PackedScene" uid="uid://dhh50ixcqgcc6" path="res://moneda.tscn" id="3_ipth5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipth5"]
 size = Vector2(1095, 46)
@@ -4039,3 +4040,9 @@ position = Vector2(-577.5, -640)
 [node name="TileMapLayer" type="TileMapLayer" parent="col_floor/plataforma" unique_id=115584223]
 tile_map_data = PackedByteArray("AAAFAAgAAAATAAYAAAAGAAgAAAATAAYAAAAHAAgAAAATAAYAAAAIAAgAAAATAAYAAAALAAYAAAATAAYAAAAMAAYAAAATAAYAAAANAAYAAAATAAYAAAAOAAYAAAATAAYAAAAEAAMAAAATAAYAAAAFAAMAAAATAAYAAAAGAAMAAAATAAYAAAAHAAMAAAATAAYAAAA=")
 tile_set = SubResource("TileSet_43spt")
+
+[node name="moneda1" parent="." unique_id=1718205296 instance=ExtResource("3_ipth5")]
+position = Vector2(399, 405)
+
+[node name="moneda2" parent="." unique_id=811509436 instance=ExtResource("3_ipth5")]
+position = Vector2(764, 288)
