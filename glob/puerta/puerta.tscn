@@ -25,17 +25,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ls2qp"]
 size = Vector2(75, 112)
 
-[node name="Area2D" type="Area2D" unique_id=417102546]
+[node name="puerta" type="Area2D" unique_id=417102546]
 script = ExtResource("1_ls2qp")
 siguiente_escena = "uid://bfuu7ub1ownpr"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1343837392]
+[node name="puerta_ani" type="AnimatedSprite2D" parent="." unique_id=1343837392]
 position = Vector2(86, 76.00001)
 scale = Vector2(0.2551724, 0.24654378)
 sprite_frames = SubResource("SpriteFrames_r1rd2")
 animation = &"abrir"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1921027565]
+[node name="puerta_col" type="CollisionShape2D" parent="." unique_id=1921027565]
 position = Vector2(86.5, 77)
 shape = SubResource("RectangleShape2D_ls2qp")
 

@@ -1,13 +1,18 @@
-[gd_scene format=3 uid="uid://dhknw2nwgmqny"]
+[gd_scene format=3 uid="uid://dmxtpgxhxlhdr"]
 
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://cumrat7l8cv8i" path="res://plataformas-manu/imgComunes/Gemini_Generated_Image_uip99cuip99cuip9 (2).png" id="1_0qi51"]
 [ext_resource type="Texture2D" uid="uid://t6n8noyfsgbd" path="res://fondo/img/wmremove-transformed.png" id="1_dq6rq"]
+=======
+[ext_resource type="Texture2D" uid="uid://chjlki5ts74ig" path="res://fondo/img/wmremove-transformed.png" id="1_dq6rq"]
+>>>>>>> d7b36cd (fondo reparado)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3ne6k"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qi51"]
+size = Vector2(1088.5, 52)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0lpo"]
-size = Vector2(1077, 56)
+[node name="fondo" type="StaticBody2D" unique_id=228222835]
 
+<<<<<<< HEAD
 [sub_resource type="FontFile" id="FontFile_olpb6"]
 subpixel_positioning = 0
 msdf_pixel_range = 14
@@ -44,23 +49,13 @@ physics_material_override = SubResource("PhysicsMaterial_3ne6k")
 z_index = -1
 position = Vector2(577, 321.62497)
 scale = Vector2(0.78023094, 0.9101562)
+=======
+[node name="imagen" type="Sprite2D" parent="." unique_id=118715557]
+position = Vector2(576.75, 325.50003)
+scale = Vector2(0.78023094, 0.9218751)
+>>>>>>> d7b36cd (fondo reparado)
 texture = ExtResource("1_dq6rq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1927951931]
-z_index = 2
-position = Vector2(581.5, 615)
-shape = SubResource("RectangleShape2D_l0lpo")
-one_way_collision = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1638988828]
-
-[node name="ContadorMonedas" type="Label" parent="CanvasLayer" unique_id=1983221057]
-offset_left = 53.0
-offset_top = 21.0
-offset_right = 148.0
-offset_bottom = 55.0
-theme = SubResource("Theme_048j0")
-text = "Monedas: 0"
-label_settings = SubResource("LabelSettings_s7ydw")
-uppercase = true
-tab_stops = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=661785074]
+position = Vector2(581.75, 620)
+shape = SubResource("RectangleShape2D_0qi51")
