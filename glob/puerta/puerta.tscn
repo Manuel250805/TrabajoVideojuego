@@ -1,42 +1,42 @@
-[gd_scene format=3 uid="uid://v6ei8s0v6u7w"]
+[gd_scene format=3 uid="uid://du4qop7u5y8hn"]
 
 [ext_resource type="Script" uid="uid://civw6d80h4w4b" path="res://puerta/puerta.gd" id="1_ls2qp"]
-[ext_resource type="Texture2D" uid="uid://d2s4t4ajexotw" path="res://puerta/img/puerta2.png" id="2_3ybbt"]
-[ext_resource type="Texture2D" uid="uid://cd0lwgka6u8vb" path="res://puerta/img/puerta3.png" id="3_4etnb"]
-[ext_resource type="Texture2D" uid="uid://dwwiem6b1cclb" path="res://puerta/img/puerta4.png" id="4_py0vn"]
+[ext_resource type="Texture2D" uid="uid://d2s4t4ajexotw" path="res://puerta/img/puerta2.png" id="1_r1rd2"]
+[ext_resource type="Texture2D" uid="uid://cd0lwgka6u8vb" path="res://puerta/img/puerta3.png" id="2_ls2qp"]
+[ext_resource type="Texture2D" uid="uid://dwwiem6b1cclb" path="res://puerta/img/puerta4.png" id="3_3ybbt"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_r1rd2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wm6w6"]
+size = Vector2(75, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_effpa"]
 animations = [{
 "frames": [{
-"duration": 3.0,
-"texture": ExtResource("2_3ybbt")
+"duration": 1.0,
+"texture": ExtResource("1_r1rd2")
 }, {
-"duration": 3.0,
-"texture": ExtResource("3_4etnb")
+"duration": 1.0,
+"texture": ExtResource("2_ls2qp")
 }, {
-"duration": 3.0,
-"texture": ExtResource("4_py0vn")
+"duration": 1.0,
+"texture": ExtResource("3_3ybbt")
 }],
-"loop": false,
+"loop": true,
 "name": &"abrir",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ls2qp"]
-size = Vector2(75, 112)
-
-[node name="puerta" type="Area2D" unique_id=417102546]
+[node name="puerta" type="Area2D" unique_id=1918614334]
 script = ExtResource("1_ls2qp")
-siguiente_escena = "uid://bfuu7ub1ownpr"
+siguiente_escena = "uid://rk1yugmdyrii"
 
-[node name="puerta_ani" type="AnimatedSprite2D" parent="." unique_id=1343837392]
-position = Vector2(764, 195)
-scale = Vector2(0.2551724, 0.24654378)
-sprite_frames = SubResource("SpriteFrames_r1rd2")
+[node name="puerta_col" type="CollisionShape2D" parent="." unique_id=1623447146]
+position = Vector2(78.5, 68)
+shape = SubResource("RectangleShape2D_wm6w6")
+
+[node name="puerta_anim" type="AnimatedSprite2D" parent="." unique_id=2050227576]
+position = Vector2(79.375, 67.187485)
+scale = Vector2(0.24070947, 0.17813206)
+sprite_frames = SubResource("SpriteFrames_effpa")
 animation = &"abrir"
-
-[node name="puerta_col" type="CollisionShape2D" parent="." unique_id=1921027565]
-position = Vector2(762, 197)
-shape = SubResource("RectangleShape2D_ls2qp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
