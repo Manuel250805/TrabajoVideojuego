@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bfuu7ub1ownpr"]
+
+[ext_resource type="PackedScene" uid="uid://ckoib54bakbeh" path="res://player/player.tscn" id="1_swe88"]
+[ext_resource type="PackedScene" uid="uid://dhknw2nwgmqny" path="res://fondo/fondo.tscn" id="2_8hxd2"]
+[ext_resource type="PackedScene" uid="uid://v6ei8s0v6u7w" path="res://puerta/puerta.tscn" id="4_wx65p"]
+[ext_resource type="PackedScene" uid="uid://dcwx366rosgv3" path="res://plataformas/plataforma.tscn" id="5_wx65p"]
+
+[sub_resource type="GDScript" id="GDScript_bqaoq"]
+
+[node name="mazmorra_rocosa" type="Node2D" unique_id=1781967908]
+script = SubResource("GDScript_bqaoq")
+
+[node name="Player" parent="." unique_id=1701064074 instance=ExtResource("1_swe88")]
+
+[node name="fondo" parent="." unique_id=126576167 instance=ExtResource("2_8hxd2")]
+z_index = -1
+
+[node name="Plataforma" parent="." unique_id=1116158067 instance=ExtResource("5_wx65p")]
+collision_mask = 0
+
+[node name="Puerta" parent="." unique_id=1677797326 instance=ExtResource("4_wx65p")]
+position = Vector2(983, 126)
