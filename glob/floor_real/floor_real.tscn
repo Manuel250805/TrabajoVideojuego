@@ -1,7 +1,7 @@
-[gd_scene format=4 uid="uid://d2xhkpii5lof8"]
+[gd_scene format=4 uid="uid://by0468frhcooo"]
 
-[ext_resource type="Texture2D" uid="uid://deoim4how0udd" path="res://floor_real/img/mazmorra_real.jpg" id="1_punds"]
-[ext_resource type="Texture2D" uid="uid://dj1h4airyeby7" path="res://plataformas/img/plataformas.png" id="2_cxrwt"]
+[ext_resource type="Texture2D" uid="uid://bq57ts7pxfe8y" path="res://floor_real/img/mazmorra_real_claudia.jpeg" id="1_cxrwt"]
+[ext_resource type="Texture2D" uid="uid://dm3f63vqv0lkm" path="res://plataformas/img/plataformas.png" id="2_cxrwt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipth5"]
 size = Vector2(1095, 46)
@@ -4024,17 +4024,18 @@ sources/0 = SubResource("TileSetAtlasSource_u42u8")
 
 [node name="floor_real" type="StaticBody2D" unique_id=1435917892]
 
-[node name="MazmorraReal" type="Sprite2D" parent="." unique_id=1183374716]
-position = Vector2(574.00006, 322)
-scale = Vector2(1.1191406, 1.3285714)
-texture = ExtResource("1_punds")
+[node name="MazmorraRealClaudia" type="Sprite2D" parent="." unique_id=502590388]
+position = Vector2(574, 323.5)
+scale = Vector2(1.1230469, 1.3081633)
+texture = ExtResource("1_cxrwt")
 
 [node name="col_floor" type="CollisionShape2D" parent="." unique_id=553810054]
 position = Vector2(577.5, 640)
 shape = SubResource("RectangleShape2D_ipth5")
 
-[node name="plataforma" type="StaticBody2D" parent="." unique_id=1146206812]
+[node name="plataforma" type="StaticBody2D" parent="col_floor" unique_id=1146206812]
+position = Vector2(-577.5, -640)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="plataforma" unique_id=115584223]
+[node name="TileMapLayer" type="TileMapLayer" parent="col_floor/plataforma" unique_id=115584223]
 tile_map_data = PackedByteArray("AAAFAAgAAAATAAYAAAAGAAgAAAATAAYAAAAHAAgAAAATAAYAAAAIAAgAAAATAAYAAAALAAYAAAATAAYAAAAMAAYAAAATAAYAAAANAAYAAAATAAYAAAAOAAYAAAATAAYAAAAEAAMAAAATAAYAAAAFAAMAAAATAAYAAAAGAAMAAAATAAYAAAAHAAMAAAATAAYAAAA=")
 tile_set = SubResource("TileSet_43spt")
