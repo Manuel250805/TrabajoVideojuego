@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dtn47ebovcpdg" path="res://moneda_claudia/img/moneda3.png" id="16_tes01"]
 [ext_resource type="Texture2D" uid="uid://bf0rc7k4d82lr" path="res://moneda_claudia/img/moneda4.png" id="17_l2tgj"]
 [ext_resource type="Texture2D" uid="uid://pg6mv303j2u3" path="res://moneda_claudia/img/moneda5.png" id="18_rs8wg"]
+[ext_resource type="AudioStream" uid="uid://c824g3boij1f0" path="res://moneda_claudia/moneda.mp3" id="20_ymdof"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kihup"]
 animations = [{
@@ -93,10 +94,13 @@ script = ExtResource("1_mqv70")
 position = Vector2(-27, 32.25)
 scale = Vector2(0.5, 0.5359712)
 sprite_frames = SubResource("SpriteFrames_kihup")
-frame_progress = 0.5633229
+frame_progress = 0.30766454
 
 [node name="col_moneda" type="CollisionShape2D" parent="." unique_id=1013420233]
 position = Vector2(-28, 31)
 shape = SubResource("CapsuleShape2D_phy07")
+
+[node name="audio_moneda" type="AudioStreamPlayer2D" parent="." unique_id=1891582074]
+stream = ExtResource("20_ymdof")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
