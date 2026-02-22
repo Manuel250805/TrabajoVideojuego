@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cm7kj1hao62jb"]
+
+[ext_resource type="PackedScene" uid="uid://dvq75dis5fiyy" path="res://floor_mazmorra_alejandro/floor_mazmorra.tscn" id="1_c8v0t"]
+[ext_resource type="PackedScene" uid="uid://ds45y1hrqf8dy" path="res://caballeros.tscn" id="2_terbq"]
+[ext_resource type="PackedScene" uid="uid://ktnra3n38yr2" path="res://pinchos.tscn" id="3_terbq"]
+
+[node name="mazmorra_oscura" type="Node2D" unique_id=1518120767]
+
+[node name="floor_mazmorra" parent="." unique_id=1850895471 instance=ExtResource("1_c8v0t")]
+
+[node name="Pinchos" parent="." unique_id=560304621 instance=ExtResource("3_terbq")]
+
+[node name="Caballeros" parent="." unique_id=390737071 instance=ExtResource("2_terbq")]
+z_index = 1

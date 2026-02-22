@@ -1,14 +1,12 @@
-[gd_scene format=4 uid="uid://dvq75dis5fiyy"]
+[gd_scene format=3 uid="uid://ktnra3n38yr2"]
 
-[ext_resource type="Texture2D" uid="uid://dg7e5lyxru6mo" path="res://floor_mazmorra_alejandro/img/fondo.png" id="1_0amwc"]
-[ext_resource type="Texture2D" uid="uid://brpuq8aq7756o" path="res://plataforma_alejandro/img/plataformas_grises (1).png" id="3_6n1hr"]
+[ext_resource type="Script" uid="uid://bxgh4hxu3xixf" path="res://pinchos/pinchos.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://brpuq8aq7756o" path="res://plataforma_alejandro/img/plataformas_grises (1).png" id="1_wtcfe"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0amwc"]
-size = Vector2(1135, 36)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hqnc1"]
-texture = ExtResource("3_6n1hr")
-texture_region_size = Vector2i(52, 53)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0e48y"]
+texture = ExtResource("1_wtcfe")
+margins = Vector2i(2, 0)
+texture_region_size = Vector2i(51, 52)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1921,21 +1919,13 @@ texture_region_size = Vector2i(52, 53)
 65:48/0 = 0
 66:48/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_1nxad"]
+[sub_resource type="TileSet" id="TileSet_epypp"]
 tile_size = Vector2i(49, 52)
-sources/1 = SubResource("TileSetAtlasSource_hqnc1")
+sources/0 = SubResource("TileSetAtlasSource_0e48y")
 
-[node name="floor_mazmorra" type="StaticBody2D" unique_id=1850895471]
+[node name="Pinchos" type="Node2D" unique_id=560304621]
+script = ExtResource("1_0e48y")
 
-[node name="Fondo" type="Sprite2D" parent="." unique_id=1559698511]
-position = Vector2(576.87494, 324.875)
-scale = Vector2(0.7756454, 0.9066051)
-texture = ExtResource("1_0amwc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=529994695]
-position = Vector2(580.5, 623)
-shape = SubResource("RectangleShape2D_0amwc")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1509276777]
-tile_map_data = PackedByteArray("AAAMAAYAAQAJAAkAAAAKAAUAAQAJAAkAAAAJAAUAAQAJAAkAAAAFAAQAAQAJAAkAAAAGAAQAAQAJAAkAAAACAAMAAQAJAAkAAAADAAMAAQAJAAkAAAASAAkAAQAJAAkAAAASAAcAAQAJAAkAAAARAAcAAQAJAAkAAAAQAAcAAQAJAAkAAAANAAYAAQAJAAkAAAA=")
-tile_set = SubResource("TileSet_1nxad")
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=604045119]
+tile_map_data = PackedByteArray(0, 0, 18, 0, 8, 0, 0, 0, 8, 0, 12, 0, 0, 0, 13, 0, 5, 0, 0, 0, 8, 0, 12, 0, 0, 0, 16, 0, 6, 0, 0, 0, 8, 0, 12, 0, 0, 0, 17, 0, 6, 0, 0, 0, 8, 0, 12, 0, 0, 0, 18, 0, 6, 0, 0, 0, 8, 0, 12, 0, 0, 0)
+tile_set = SubResource("TileSet_epypp")
