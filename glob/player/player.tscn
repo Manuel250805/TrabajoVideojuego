@@ -1,3 +1,4 @@
+<<<<<<< ours
 [gd_scene format=3 uid="uid://ckoib54bakbeh"]
 
 [ext_resource type="Script" uid="uid://bs8cyyfxvrtsu" path="res://player/player.gd" id="1_urp6f"]
@@ -13,6 +14,23 @@
 [ext_resource type="Texture2D" uid="uid://cr1ieu36ygwv7" path="res://player/img/run3.png" id="11_7lmhl"]
 [ext_resource type="Texture2D" uid="uid://cnipuxflusx6c" path="res://player/img/run4.png" id="12_dx0e4"]
 [ext_resource type="Texture2D" uid="uid://bet605x0q0yjh" path="res://player/img/run5.png" id="13_jm5j8"]
+=======
+[gd_scene format=3 uid="uid://dtd0cw14qneuj"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_urp6f"]
+[ext_resource type="Texture2D" path="res://player/img/attack1 (2).png" id="2_bwjto"]
+[ext_resource type="Texture2D" path="res://player/img/attack2 (2).png" id="3_606se"]
+[ext_resource type="Texture2D" path="res://player/img/attach3 (2).png" id="4_u1c27"]
+[ext_resource type="Texture2D" path="res://player/img/idle4.png" id="5_op7ga"]
+[ext_resource type="Texture2D" path="res://player/img/idle5.png" id="6_q13i1"]
+[ext_resource type="Texture2D" path="res://player/img/jump1.png" id="7_pylmc"]
+[ext_resource type="Texture2D" path="res://player/img/idle1.png" id="8_pbfsw"]
+[ext_resource type="Texture2D" path="res://player/img/run1.png" id="9_5tmop"]
+[ext_resource type="Texture2D" path="res://player/img/run2.png" id="10_7ahtn"]
+[ext_resource type="Texture2D" path="res://player/img/run3.png" id="11_7lmhl"]
+[ext_resource type="Texture2D" path="res://player/img/run4.png" id="12_dx0e4"]
+[ext_resource type="Texture2D" path="res://player/img/run5.png" id="13_jm5j8"]
+>>>>>>> theirs
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4k5n"]
 size = Vector2(50.5, 61.125)
