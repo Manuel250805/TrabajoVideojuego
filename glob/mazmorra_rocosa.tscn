@@ -1,22 +1,19 @@
 [gd_scene format=3 uid="uid://bfuu7ub1ownpr"]
 
-[ext_resource type="PackedScene" uid="uid://ckoib54bakbeh" path="res://player/player.tscn" id="1_swe88"]
-[ext_resource type="PackedScene" uid="uid://dmxtpgxhxlhdr" path="res://fondo/fondo.tscn" id="2_8hxd2"]
-[ext_resource type="PackedScene" uid="uid://v6ei8s0v6u7w" path="res://puerta/puerta.tscn" id="4_wx65p"]
-[ext_resource type="PackedScene" uid="uid://dcwx366rosgv3" path="res://plataformas/plataforma.tscn" id="5_wx65p"]
+[ext_resource type="PackedScene" uid="uid://v6ei8s0v6u7w" path="res://puerta/puerta.tscn" id="1_bqaoq"]
+[ext_resource type="PackedScene" uid="uid://ckoib54bakbeh" path="res://player/player.tscn" id="2_wx65p"]
+[ext_resource type="PackedScene" uid="uid://dmxtpgxhxlhdr" path="res://fondo/fondo.tscn" id="3_cqr48"]
+[ext_resource type="PackedScene" uid="uid://dcwx366rosgv3" path="res://plataformas/plataforma.tscn" id="4_qbqti"]
 
-[sub_resource type="GDScript" id="GDScript_bqaoq"]
+[node name="mazmorra rocosa" type="Node2D" unique_id=1555720097]
 
-[node name="mazmorra_rocosa" type="Node2D" unique_id=1781967908]
-script = SubResource("GDScript_bqaoq")
+[node name="puerta" parent="." unique_id=417102546 instance=ExtResource("1_bqaoq")]
+position = Vector2(205, 7)
 
-[node name="Player" parent="." unique_id=1701064074 instance=ExtResource("1_swe88")]
+[node name="Player" parent="." unique_id=1701064074 instance=ExtResource("2_wx65p")]
 
-[node name="Plataforma" parent="." unique_id=1116158067 instance=ExtResource("5_wx65p")]
-collision_mask = 0
+[node name="fondo" parent="." unique_id=259022570 instance=ExtResource("3_cqr48")]
+z_index = -1
 
-[node name="fondo" parent="." unique_id=228222835 instance=ExtResource("2_8hxd2")]
-position = Vector2(0, -5)
-
-[node name="puerta" parent="." unique_id=417102546 instance=ExtResource("4_wx65p")]
-position = Vector2(981, 125)
+[node name="Plataforma" parent="." unique_id=1116158067 instance=ExtResource("4_qbqti")]
+position = Vector2(1, 5)

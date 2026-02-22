@@ -30,13 +30,13 @@ script = ExtResource("1_ls2qp")
 siguiente_escena = "uid://bfuu7ub1ownpr"
 
 [node name="puerta_ani" type="AnimatedSprite2D" parent="." unique_id=1343837392]
-position = Vector2(86, 76.00001)
+position = Vector2(764, 195)
 scale = Vector2(0.2551724, 0.24654378)
 sprite_frames = SubResource("SpriteFrames_r1rd2")
 animation = &"abrir"
 
 [node name="puerta_col" type="CollisionShape2D" parent="." unique_id=1921027565]
-position = Vector2(86.5, 77)
+position = Vector2(762, 197)
 shape = SubResource("RectangleShape2D_ls2qp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

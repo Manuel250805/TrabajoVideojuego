@@ -1,61 +1,17 @@
 [gd_scene format=3 uid="uid://dmxtpgxhxlhdr"]
 
-<<<<<<< HEAD
-[ext_resource type="Texture2D" uid="uid://cumrat7l8cv8i" path="res://plataformas-manu/imgComunes/Gemini_Generated_Image_uip99cuip99cuip9 (2).png" id="1_0qi51"]
-[ext_resource type="Texture2D" uid="uid://t6n8noyfsgbd" path="res://fondo/img/wmremove-transformed.png" id="1_dq6rq"]
-=======
-[ext_resource type="Texture2D" uid="uid://chjlki5ts74ig" path="res://fondo/img/wmremove-transformed.png" id="1_dq6rq"]
->>>>>>> d7b36cd (fondo reparado)
+[ext_resource type="Texture2D" uid="uid://chjlki5ts74ig" path="res://fondo/img/wmremove-transformed.png" id="1_0qi51"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qi51"]
-size = Vector2(1088.5, 52)
+size = Vector2(1094, 58.5)
 
-[node name="fondo" type="StaticBody2D" unique_id=228222835]
+[node name="fondo" type="StaticBody2D" unique_id=259022570]
 
-<<<<<<< HEAD
-[sub_resource type="FontFile" id="FontFile_olpb6"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/14/0/ascent = 0.0
-cache/0/14/0/descent = 0.0
-cache/0/14/0/underline_position = 0.0
-cache/0/14/0/underline_thickness = 0.0
-cache/0/14/0/scale = 1.0
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1634264168]
+position = Vector2(574.00006, 322)
+scale = Vector2(0.78091013, 0.9190341)
+texture = ExtResource("1_0qi51")
 
-[sub_resource type="Theme" id="Theme_048j0"]
-default_font = SubResource("FontFile_olpb6")
-
-[sub_resource type="LabelSettings" id="LabelSettings_s7ydw"]
-
-[node name="fondo" type="StaticBody2D" unique_id=126576167]
-physics_material_override = SubResource("PhysicsMaterial_3ne6k")
-
-[node name="img_fondo" type="Sprite2D" parent="." unique_id=708758551]
-z_index = -1
-position = Vector2(577, 321.62497)
-scale = Vector2(0.78023094, 0.9101562)
-=======
-[node name="imagen" type="Sprite2D" parent="." unique_id=118715557]
-position = Vector2(576.75, 325.50003)
-scale = Vector2(0.78023094, 0.9218751)
->>>>>>> d7b36cd (fondo reparado)
-texture = ExtResource("1_dq6rq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=661785074]
-position = Vector2(581.75, 620)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1743984073]
+position = Vector2(581, 617.25)
 shape = SubResource("RectangleShape2D_0qi51")
