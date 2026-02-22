@@ -27,7 +27,7 @@ animations = [{
 
 [node name="puerta" type="Area2D" unique_id=1918614334]
 script = ExtResource("1_ls2qp")
-siguiente_escena = "uid://rk1yugmdyrii"
+siguiente_escena = "uid://by0468frhcooo"
 
 [node name="puerta_col" type="CollisionShape2D" parent="." unique_id=1623447146]
 position = Vector2(78.5, 68)
