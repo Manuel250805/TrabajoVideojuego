@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://by0468frhcooo"]
 
-[ext_resource type="Texture2D" uid="uid://dbfbav8188eas" path="res://floor_real/img/mazmorra_real_claudia.jpeg" id="1_cxrwt"]
+[ext_resource type="Texture2D" uid="uid://bq57ts7pxfe8y" path="res://floor_real/img/mazmorra_real_claudia.jpeg" id="1_cxrwt"]
 [ext_resource type="Texture2D" uid="uid://dm3f63vqv0lkm" path="res://plataformas/img/plataformas.png" id="2_cxrwt"]
-[ext_resource type="PackedScene" uid="uid://dhh50ixcqgcc6" path="res://moneda.tscn" id="3_ipth5"]
+[ext_resource type="PackedScene" uid="uid://fe1gh4xxmasn" path="res://moneda.tscn" id="3_ipth5"]
+[ext_resource type="PackedScene" uid="uid://ckoib54bakbeh" path="res://player/player.tscn" id="4_u42u8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipth5"]
 size = Vector2(1095, 46)
@@ -4046,3 +4047,6 @@ position = Vector2(399, 405)
 
 [node name="moneda2" parent="." unique_id=811509436 instance=ExtResource("3_ipth5")]
 position = Vector2(764, 288)
+
+[node name="Player" parent="." unique_id=1701064074 instance=ExtResource("4_u42u8")]
+position = Vector2(73, 29)
