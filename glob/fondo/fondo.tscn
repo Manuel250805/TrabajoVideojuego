@@ -1,11 +1,7 @@
 [gd_scene format=3 uid="uid://dhknw2nwgmqny"]
 
-<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://cumrat7l8cv8i" path="res://plataformas-manu/imgComunes/Gemini_Generated_Image_uip99cuip99cuip9 (2).png" id="1_0qi51"]
 [ext_resource type="Texture2D" uid="uid://t6n8noyfsgbd" path="res://fondo/img/wmremove-transformed.png" id="1_dq6rq"]
-=======
-[ext_resource type="Texture2D" uid="uid://chjlki5ts74ig" path="res://fondo/img/wmremove-transformed.png" id="1_dq6rq"]
->>>>>>> Manuel
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3ne6k"]
 
@@ -45,14 +41,9 @@ default_font = SubResource("FontFile_olpb6")
 physics_material_override = SubResource("PhysicsMaterial_3ne6k")
 
 [node name="img_fondo" type="Sprite2D" parent="." unique_id=708758551]
-<<<<<<< HEAD
-position = Vector2(575.74994, 320.75)
-scale = Vector2(0.78023094, 0.89701706)
-=======
 z_index = -1
 position = Vector2(577, 321.62497)
 scale = Vector2(0.78023094, 0.9101562)
->>>>>>> Manuel
 texture = ExtResource("1_dq6rq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1927951931]
