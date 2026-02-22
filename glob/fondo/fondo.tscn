@@ -1,65 +1,17 @@
-[gd_scene format=3 uid="uid://dhknw2nwgmqny"]
+[gd_scene format=3 uid="uid://bxdxfw370nolm"]
 
 [ext_resource type="Texture2D" uid="uid://chjlki5ts74ig" path="res://fondo/img/wmremove-transformed.png" id="1_dq6rq"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3ne6k"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qi51"]
+size = Vector2(1083, 62)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0lpo"]
-size = Vector2(1077, 56)
+[node name="fondo" type="StaticBody2D" unique_id=1868442869]
 
-[sub_resource type="FontFile" id="FontFile_olpb6"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/14/0/ascent = 0.0
-cache/0/14/0/descent = 0.0
-cache/0/14/0/underline_position = 0.0
-cache/0/14/0/underline_thickness = 0.0
-cache/0/14/0/scale = 1.0
-
-[sub_resource type="Theme" id="Theme_048j0"]
-default_font = SubResource("FontFile_olpb6")
-
-[sub_resource type="LabelSettings" id="LabelSettings_s7ydw"]
-
-[node name="fondo" type="StaticBody2D" unique_id=126576167]
-physics_material_override = SubResource("PhysicsMaterial_3ne6k")
-
-[node name="img_fondo" type="Sprite2D" parent="." unique_id=708758551]
-z_index = -1
-position = Vector2(577, 321.62497)
-scale = Vector2(0.78023094, 0.9101562)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=163417153]
+position = Vector2(580, 324.5)
+scale = Vector2(0.7826087, 0.9161932)
 texture = ExtResource("1_dq6rq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1927951931]
-z_index = 2
-position = Vector2(581.5, 615)
-shape = SubResource("RectangleShape2D_l0lpo")
-one_way_collision = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1638988828]
-
-[node name="ContadorMonedas" type="Label" parent="CanvasLayer" unique_id=1983221057]
-offset_left = 53.0
-offset_top = 21.0
-offset_right = 148.0
-offset_bottom = 55.0
-theme = SubResource("Theme_048j0")
-text = "Monedas: 0"
-label_settings = SubResource("LabelSettings_s7ydw")
-uppercase = true
-tab_stops = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=894918743]
+position = Vector2(580, 622)
+shape = SubResource("RectangleShape2D_0qi51")
