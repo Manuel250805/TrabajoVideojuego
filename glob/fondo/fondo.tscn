@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://dmxtpgxhxlhdr"]
 
-[ext_resource type="Texture2D" uid="uid://chjlki5ts74ig" path="res://fondo/img/wmremove-transformed.png" id="1_0qi51"]
+[ext_resource type="Texture2D" uid="uid://t6n8noyfsgbd" path="res://fondo/img/wmremove-transformed.png" id="1_0qi51"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qi51"]
 size = Vector2(1094, 58.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dq6rq"]
+size = Vector2(1089, 18)
 
 [node name="fondo" type="StaticBody2D" unique_id=259022570]
 
@@ -12,6 +15,10 @@ position = Vector2(574.00006, 322)
 scale = Vector2(0.78091013, 0.9190341)
 texture = ExtResource("1_0qi51")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1743984073]
+[node name="suelo" type="CollisionShape2D" parent="." unique_id=1743984073]
 position = Vector2(581, 617.25)
 shape = SubResource("RectangleShape2D_0qi51")
+
+[node name="techo" type="CollisionShape2D" parent="." unique_id=1329648238]
+position = Vector2(577.5, 56)
+shape = SubResource("RectangleShape2D_dq6rq")

@@ -7,27 +7,33 @@ extends CharacterBody2D
 @export var left_limit: float = 0.0
 @export var right_limit: float = 1040.0
 @export var max_jumps: int = 2
-
 var jump_count: int = 0
 var is_attacking: bool = false
 
-@onready var anim = $AnimatedSprite2D
+@onready var anim = $ani_player
+@onready var contador: Control = $CanvasLayer/Contador
+var monedas: int = 0
+
+func _ready() -> void:
+	add_to_group("player")
+	if contador:
+		contador.actualizar(0)
 
 func _physics_process(delta):
-
-	# GRAVEDAD
+	# 1. GRAVEDAD
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	else:
 		jump_count = 0
 
-	# ATAQUE
+	# 2. ATAQUE (Corregido el espacio a la izquierda)
 	if Input.is_action_just_pressed("atacar") and not is_attacking:
 		is_attacking = true
 		anim.play("attack")
 		velocity.x = 0
+		$area_golpe2/col_golpe.disabled = false
 
-	# Si está atacando no puede moverse
+	# 3. MOVIMIENTO (Solo si no está atacando)
 	if not is_attacking:
 		var direction = Input.get_axis("ui_left", "ui_right")
 		velocity.x = direction * speed
@@ -49,29 +55,30 @@ func _physics_process(delta):
 			anim.play("idle")
 
 	move_and_slide()
-
 	position.x = clamp(position.x, left_limit, right_limit)
 
-
+# Unificamos la función de fin de animación
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if anim.animation == "attack":
 		is_attacking = false
-		
-	
-# Referencia al contador
-@onready var contador: Control = $CanvasLayer/Contador
+		$area_golpe2/col_golpe.disabled = true # Desactiva el golpe
 
-# Contador de monedas
-var monedas: int = 0
+# --- SEÑAL DE GOLPE AL CABALLERO ---
+# Cambiamos el nombre para que coincida con el nodo 'area_golpe2'
+func _on_area_golpe_2_body_entered(body: Node2D) -> void:
+	if is_attacking and body.is_in_group("enemigos"):
+		if body.has_method("morir_enemigo"):
+			body.morir_enemigo()
 
-
-# Agregamos al player al grupo de jugadores
-func _ready() -> void:
-	add_to_group("jugadores")
-	contador.actualizar(0)
-	
-
-# Agrega una moneda al contador del jugador
+# --- OTROS ---
 func add_moneda():
-	monedas+=1
+	monedas += 1
 	contador.actualizar(monedas)
+
+func morir():
+	is_attacking = true 
+	velocity.x = 0
+	$ani_player.play("morir") 
+	$tiempo.start()
+	await $tiempo.timeout
+	get_tree().reload_current_scene()

@@ -371,7 +371,9 @@ texture_region_size = Vector2i(51, 52)
 66:8/0 = 0
 0:9/0 = 0
 1:9/0 = 0
+1:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.5, -26, 24.5, -26, 24.5, 26, -24.5, 26)
 2:9/0 = 0
+2:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.5, -26, 24.5, -26, 24.5, 26, -24.5, 26)
 3:9/0 = 0
 4:9/0 = 0
 5:9/0 = 0
@@ -430,8 +432,11 @@ texture_region_size = Vector2i(51, 52)
 3:10/0 = 0
 4:10/0 = 0
 5:10/0 = 0
+5:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.5, -26, 24.5, -26, 24.5, 26, -24.5, 26)
 6:10/0 = 0
+6:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.5, -26, 24.5, -26, 24.5, 26, -24.5, 26)
 7:10/0 = 0
+7:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.5, -26, 24.5, -26, 24.5, 26, -24.5, 26)
 8:10/0 = 0
 9:10/0 = 0
 10:10/0 = 0
@@ -478,10 +483,15 @@ texture_region_size = Vector2i(51, 52)
 2:11/0 = 0
 3:11/0 = 0
 4:11/0 = 0
+4:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.5, -26, 24.5, -26, 24.5, 26, -24.5, 26)
 5:11/0 = 0
+5:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.5, -26, 24.5, -26, 24.5, 26, -24.5, 26)
 6:11/0 = 0
+6:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.5, -26, 24.5, -26, 24.5, 26, -24.5, 26)
 7:11/0 = 0
+7:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.5, -26, 24.5, -26, 24.5, 26, -24.5, 26)
 8:11/0 = 0
+8:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.5, -26, 24.5, -26, 24.5, 26, -24.5, 26)
 9:11/0 = 0
 10:11/0 = 0
 11:11/0 = 0
@@ -1921,11 +1931,12 @@ texture_region_size = Vector2i(51, 52)
 
 [sub_resource type="TileSet" id="TileSet_epypp"]
 tile_size = Vector2i(49, 52)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0e48y")
 
 [node name="Pinchos" type="Node2D" unique_id=560304621]
 script = ExtResource("1_0e48y")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=604045119]
-tile_map_data = PackedByteArray(0, 0, 18, 0, 8, 0, 0, 0, 8, 0, 12, 0, 0, 0, 13, 0, 5, 0, 0, 0, 8, 0, 12, 0, 0, 0, 16, 0, 6, 0, 0, 0, 8, 0, 12, 0, 0, 0, 17, 0, 6, 0, 0, 0, 8, 0, 12, 0, 0, 0, 18, 0, 6, 0, 0, 0, 8, 0, 12, 0, 0, 0)
+tile_map_data = PackedByteArray(0, 0, 14, 0, 6, 0, 0, 0, 5, 0, 6, 0, 0, 0, 15, 0, 6, 0, 0, 0, 5, 0, 6, 0, 0, 0, 16, 0, 6, 0, 0, 0, 5, 0, 6, 0, 0, 0)
 tile_set = SubResource("TileSet_epypp")

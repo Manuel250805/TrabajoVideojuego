@@ -14,13 +14,23 @@ script = ExtResource("1_q0ngr")
 
 [node name="hbox_mon" type="HBoxContainer" parent="." unique_id=1363640733]
 layout_mode = 0
-offset_right = 40.0
+offset_left = 12.0
+offset_right = 52.0
 offset_bottom = 40.0
 
-[node name="lbl_contador_mon" type="Label" parent="hbox_mon" unique_id=1712774509]
-layout_mode = 2
-
-[node name="imagen" type="Sprite2D" parent="hbox_mon/lbl_contador_mon" unique_id=233403857]
-position = Vector2(57.999992, 22)
+[node name="imagen" type="Sprite2D" parent="." unique_id=233403857]
+position = Vector2(67, 36)
 scale = Vector2(0.46774194, 0.46402878)
 texture = ExtResource("2_ubwpd")
+
+[node name="lbl_contador_mon" type="Label" parent="." unique_id=1712774509]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.021000002
+anchor_bottom = 0.048
+offset_left = 52.0
+offset_top = 25.0
+offset_right = 55.808
+offset_bottom = 16.896
+horizontal_alignment = 1
+vertical_alignment = 1

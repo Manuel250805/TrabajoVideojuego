@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cm7kj1hao62jb"]
 
 [ext_resource type="PackedScene" uid="uid://dvq75dis5fiyy" path="res://floor_mazmorra_alejandro/floor_mazmorra.tscn" id="1_c8v0t"]
-[ext_resource type="PackedScene" uid="uid://ds45y1hrqf8dy" path="res://caballeros.tscn" id="2_terbq"]
-[ext_resource type="PackedScene" uid="uid://ktnra3n38yr2" path="res://pinchos.tscn" id="3_terbq"]
+[ext_resource type="PackedScene" uid="uid://ds45y1hrqf8dy" path="res://caballeros/caballeros.tscn" id="2_terbq"]
+[ext_resource type="PackedScene" uid="uid://ktnra3n38yr2" path="res://pinchos/pinchos.tscn" id="3_terbq"]
 
 [node name="mazmorra_oscura" type="Node2D" unique_id=1518120767]
 

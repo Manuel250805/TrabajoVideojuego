@@ -1,9 +1,14 @@
-[gd_scene format=3 uid="uid://psoovmfv2ee7"]
+[gd_scene format=3 uid="uid://rk1yugmdyrii"]
 
 [ext_resource type="PackedScene" uid="uid://ckoib54bakbeh" path="res://player/player.tscn" id="1_swe88"]
 [ext_resource type="PackedScene" uid="uid://dmxtpgxhxlhdr" path="res://fondo/fondo.tscn" id="2_8hxd2"]
-[ext_resource type="PackedScene" path="res://puerta/puerta.tscn" id="4_wx65p"]
+[ext_resource type="PackedScene" uid="uid://du4qop7u5y8hn" path="res://puerta/puerta.tscn" id="4_wx65p"]
+[ext_resource type="PackedScene" uid="uid://ds45y1hrqf8dy" path="res://caballeros/caballeros.tscn" id="5_cqr48"]
 [ext_resource type="PackedScene" uid="uid://dcwx366rosgv3" path="res://plataformas/plataforma.tscn" id="5_wx65p"]
+[ext_resource type="PackedScene" uid="uid://dvbja27fo30lk" path="res://llave/llave.tscn" id="6_cqr48"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqr48"]
+size = Vector2(28.25, 66)
 
 [node name="mazmorra_rocosa" type="Node2D" unique_id=2037106556]
 
@@ -11,7 +16,24 @@
 
 [node name="Plataforma" parent="." unique_id=1116158067 instance=ExtResource("5_wx65p")]
 
-[node name="Area2D" parent="." unique_id=417102546 instance=ExtResource("4_wx65p")]
+[node name="puerta" parent="." unique_id=417102546 instance=ExtResource("4_wx65p")]
 position = Vector2(949, 145)
 
+[node name="Caballeros" parent="." unique_id=432824271 groups=["enemigos"] instance=ExtResource("5_cqr48")]
+z_index = 1
+position = Vector2(427, -392)
+
+[node name="llave" parent="." unique_id=1918614334 instance=ExtResource("6_cqr48")]
+position = Vector2(95, 46)
+
 [node name="Player" parent="." unique_id=1701064074 instance=ExtResource("1_swe88")]
+
+[node name="area_golpe2" type="Area2D" parent="Player" unique_id=1711850497]
+position = Vector2(0, -7)
+
+[node name="col_golpe" type="CollisionShape2D" parent="Player/area_golpe2" unique_id=937430274]
+position = Vector2(94.875, 561)
+shape = SubResource("RectangleShape2D_cqr48")
+
+[connection signal="llave_recogida" from="llave" to="puerta" method="_on_llave_llave_recogida"]
+[connection signal="body_entered" from="Player/area_golpe2" to="Player" method="_on_area_golpe_2_body_entered"]
