@@ -11,7 +11,11 @@ config_version=5
 [application]
 
 config/name="GLOB"
+<<<<<<< HEAD
+run/main_scene="uid://cm7kj1hao62jb"
+=======
 run/main_scene="uid://rk1yugmdyrii"
+>>>>>>> 91652d001492008febbe6b68c9f7c403f82508a7
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
