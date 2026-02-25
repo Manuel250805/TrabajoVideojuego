@@ -5,9 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://dm3f63vqv0lkm" path="res://plataformas/img/plataformas.png" id="2_cxrwt"]
 [ext_resource type="PackedScene" uid="uid://fe1gh4xxmasn" path="res://moneda.tscn" id="3_ipth5"]
 [ext_resource type="PackedScene" uid="uid://ckoib54bakbeh" path="res://player/player.tscn" id="4_u42u8"]
+[ext_resource type="PackedScene" uid="uid://ccr1lgolfvir7" path="res://ene_rey/ene_rey.tscn" id="6_y3s6j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipth5"]
 size = Vector2(1095, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3s6j"]
+size = Vector2(28.25, 66)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u42u8"]
 
@@ -319,8 +323,8 @@ z_index = 1
 script = ExtResource("1_43spt")
 
 [node name="MazmorraRealClaudia" type="Sprite2D" parent="." unique_id=502590388]
-position = Vector2(574, -4.4999905)
-scale = Vector2(1.1230469, 2.6469388)
+position = Vector2(575.49994, -193)
+scale = Vector2(1.1103516, 3.5306122)
 texture = ExtResource("1_cxrwt")
 
 [node name="col_floor" type="CollisionShape2D" parent="." unique_id=553810054]
@@ -336,15 +340,25 @@ position = Vector2(764, 288)
 [node name="Player" parent="." unique_id=1701064074 instance=ExtResource("4_u42u8")]
 position = Vector2(68, -8)
 
+[node name="area_golpe2" type="Area2D" parent="Player" unique_id=451251902]
+position = Vector2(0, -7)
+
+[node name="col_golpe" type="CollisionShape2D" parent="Player/area_golpe2" unique_id=1030883567]
+position = Vector2(94.875, 561)
+shape = SubResource("RectangleShape2D_y3s6j")
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=115584223]
 z_index = 1
-tile_map_data = PackedByteArray("AAAFAPj/AQAGAAcAAAAGAPj/AQAGAAcAAAAHAPj/AQAGAAcAAAAIAPj/AQAHAAcAAAALAPr/AQAGAAcAAAAMAPr/AQAHAAcAAAANAPr/AQAGAAcAAAAOAPr/AQAHAAcAAAAFAPz/AQAGAAcAAAAGAPz/AQAHAAcAAAAHAPz/AQAGAAcAAAAIAPz/AQAHAAcAAAALAP7/AQAGAAcAAAAMAP7/AQAHAAcAAAANAP7/AQAGAAcAAAAOAP7/AQAHAAcAAAAFAAAAAQAGAAcAAAAGAAAAAQAHAAcAAAAHAAAAAQAGAAcAAAAIAAAAAQAHAAcAAAALAAIAAQAGAAcAAAAMAAIAAQAHAAcAAAANAAIAAQAGAAcAAAAOAAIAAQAHAAcAAAAFAAQAAQAGAAcAAAAGAAQAAQAHAAcAAAAHAAQAAQAGAAcAAAAIAAQAAQAHAAcAAAALAAYAAQAGAAcAAAAMAAYAAQAHAAcAAAANAAYAAQAGAAcAAAAOAAYAAQAHAAcAAAAFAAgAAQAGAAcAAAAGAAgAAQAHAAcAAAAHAAgAAQAGAAcAAAAIAAgAAQAHAAcAAAA=")
+tile_map_data = PackedByteArray("AAAFAPj/AQAGAAcAAAAGAPj/AQAGAAcAAAAHAPj/AQAGAAcAAAAIAPj/AQAHAAcAAAALAPr/AQAGAAcAAAAMAPr/AQAHAAcAAAANAPr/AQAGAAcAAAAOAPr/AQAHAAcAAAAFAPz/AQAGAAcAAAAGAPz/AQAHAAcAAAAHAPz/AQAGAAcAAAAIAPz/AQAHAAcAAAALAP7/AQAGAAcAAAAMAP7/AQAHAAcAAAANAP7/AQAGAAcAAAAOAP7/AQAHAAcAAAAFAAAAAQAGAAcAAAAGAAAAAQAHAAcAAAAHAAAAAQAGAAcAAAAIAAAAAQAHAAcAAAALAAIAAQAGAAcAAAAMAAIAAQAHAAcAAAANAAIAAQAGAAcAAAAOAAIAAQAHAAcAAAAFAAQAAQAGAAcAAAAGAAQAAQAHAAcAAAAHAAQAAQAGAAcAAAAIAAQAAQAHAAcAAAALAAYAAQAGAAcAAAAMAAYAAQAHAAcAAAANAAYAAQAGAAcAAAAOAAYAAQAHAAcAAAAFAAgAAQAGAAcAAAAGAAgAAQAHAAcAAAAHAAgAAQAGAAcAAAAIAAgAAQAHAAcAAAAKAPb/AQAFAAcAAAALAPb/AQAGAAcAAAAMAPb/AQAHAAcAAAAEAPT/AQAFAAcAAAAFAPT/AQAGAAcAAAAGAPT/AQAHAAcAAAAKAPL/AQAFAAcAAAALAPL/AQAGAAcAAAAMAPL/AQAHAAcAAAANAPL/AQAFAAcAAAAOAPL/AQAGAAcAAAAPAPL/AQAHAAcAAAAQAPL/AQAFAAcAAAARAPL/AQAGAAcAAAASAPL/AQAHAAcAAAAPAAYAAQAAAAAAAAAJAAQAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_43spt")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1549391923]
 
 [node name="techo" type="CollisionShape2D" parent="." unique_id=2009907941]
-position = Vector2(577, -596)
+position = Vector2(569, -986)
 shape = SubResource("RectangleShape2D_43spt")
+
+[node name="ene_rey" parent="." unique_id=1827934505 instance=ExtResource("6_y3s6j")]
+position = Vector2(646, -880)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

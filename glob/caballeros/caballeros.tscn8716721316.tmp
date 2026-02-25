@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ds45y1hrqf8dy"]
+
+[ext_resource type="Script" uid="uid://dmuk4wdaff7ja" path="res://caballeros/caballeros.gd" id="1_e2vmc"]
+[ext_resource type="Texture2D" uid="uid://c03w1oejj5hbe" path="res://caballeros/img/cam1.png" id="2_lusii"]
+[ext_resource type="Texture2D" uid="uid://xtyd2p0h0egc" path="res://caballeros/img/cam2.png" id="3_ti0rj"]
+[ext_resource type="Texture2D" uid="uid://b3yfsj6yp62xg" path="res://caballeros/img/cam3.png" id="4_ctvee"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wosiq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lusii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ti0rj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ctvee")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cw3dm"]
+size = Vector2(49.75, 74.0625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg8t7"]
+size = Vector2(71, 111)
+
+[node name="Caballeros" type="CharacterBody2D" unique_id=432824271]
+script = ExtResource("1_e2vmc")
+
+[node name="ani_ene_dyn" type="AnimatedSprite2D" parent="." unique_id=1392003651]
+position = Vector2(268, 607)
+scale = Vector2(0.256, 0.23456785)
+sprite_frames = SubResource("SpriteFrames_wosiq")
+
+[node name="col_ene_dyn" type="CollisionShape2D" parent="." unique_id=453998883]
+position = Vector2(269.125, 607.03125)
+shape = SubResource("RectangleShape2D_cw3dm")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1280654557]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1211920631]
+position = Vector2(269.5, 592.5)
+shape = SubResource("RectangleShape2D_dg8t7")
+
+[node name="detectorIzquierdo" type="RayCast2D" parent="." unique_id=1518577121]
+position = Vector2(231, 497)
+target_position = Vector2(-1, 151)
+
+[node name="detectorDerecho" type="RayCast2D" parent="." unique_id=822987077]
+position = Vector2(304, 503)
+target_position = Vector2(-3, 150)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
