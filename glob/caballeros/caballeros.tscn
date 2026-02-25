@@ -1,57 +1,131 @@
 [gd_scene format=3 uid="uid://ds45y1hrqf8dy"]
 
-[ext_resource type="Script" uid="uid://dmuk4wdaff7ja" path="res://caballeros/caballeros.gd" id="1_e2vmc"]
-[ext_resource type="Texture2D" uid="uid://c03w1oejj5hbe" path="res://caballeros/img/cam1.png" id="2_lusii"]
-[ext_resource type="Texture2D" uid="uid://xtyd2p0h0egc" path="res://caballeros/img/cam2.png" id="3_ti0rj"]
-[ext_resource type="Texture2D" uid="uid://b3yfsj6yp62xg" path="res://caballeros/img/cam3.png" id="4_ctvee"]
+[ext_resource type="Script" uid="uid://dmuk4wdaff7ja" path="res://caballeros/caballeros.gd" id="1_script"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wosiq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_lusii")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_ti0rj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_ctvee")
-}],
+# CAMINAR
+[ext_resource type="Texture2D" uid="uid://c03w1oejj5hbe" path="res://caballeros/img/cam1.png" id="cam1"]
+[ext_resource type="Texture2D" uid="uid://xtyd2p0h0egc" path="res://caballeros/img/cam2.png" id="cam2"]
+[ext_resource type="Texture2D" uid="uid://b3yfsj6yp62xg" path="res://caballeros/img/cam3.png" id="cam3"]
+[ext_resource type="Texture2D" uid="uid://c4xw3guxqowmy" path="res://caballeros/img/cam4.png" id="cam4"]
+[ext_resource type="Texture2D" uid="uid://ck3epgavmn2ei" path="res://caballeros/img/cam5.png" id="cam5"]
+[ext_resource type="Texture2D" uid="uid://caijys7fovvkk" path="res://caballeros/img/cam6.png" id="cam6"]
+[ext_resource type="Texture2D" uid="uid://bihlvm7bfjfao" path="res://caballeros/img/cam7.png" id="cam7"]
+[ext_resource type="Texture2D" uid="uid://bxss8nl6r0vor" path="res://caballeros/img/cam8.png" id="cam8"]
+[ext_resource type="Texture2D" uid="uid://d0x7yjhf1x52c" path="res://caballeros/img/cam9.png" id="cam9"]
+[ext_resource type="Texture2D" uid="uid://c50ffhnn8fxj1" path="res://caballeros/img/cam10.png" id="cam10"]
+
+# ATAQUE
+[ext_resource type="Texture2D" uid="uid://c1mm5bofsaeac" path="res://caballeros/img/atack1.png" id="atk1"]
+[ext_resource type="Texture2D" uid="uid://mgic2qhl6s74" path="res://caballeros/img/atack2.png" id="atk2"]
+[ext_resource type="Texture2D" uid="uid://b0w54oyxkoy1c" path="res://caballeros/img/atack3.png" id="atk3"]
+[ext_resource type="Texture2D" uid="uid://bwk7fav36tlra" path="res://caballeros/img/atack4.png" id="atk4"]
+[ext_resource type="Texture2D" uid="uid://7bsa3ggrs4uu" path="res://caballeros/img/atack5.png" id="atk5"]
+[ext_resource type="Texture2D" uid="uid://qd7f2f4mleot" path="res://caballeros/img/atack6.png" id="atk6"]
+[ext_resource type="Texture2D" uid="uid://e57kq73vsy8i" path="res://caballeros/img/atack7.png" id="atk7"]
+[ext_resource type="Texture2D" uid="uid://bbx87dblb2iwm" path="res://caballeros/img/atack8.png" id="atk8"]
+[ext_resource type="Texture2D" uid="uid://jugrkbc3b34u" path="res://caballeros/img/atack9.png" id="atk9"]
+[ext_resource type="Texture2D" uid="uid://d4en0h77tpj0d" path="res://caballeros/img/atack10.png" id="atk10"]
+
+# MORIR
+[ext_resource type="Texture2D" uid="uid://bl18t2jscqf4b" path="res://caballeros/img/die1.png" id="die1"]
+[ext_resource type="Texture2D" uid="uid://cdgdahtx02v78" path="res://caballeros/img/die2.png" id="die2"]
+[ext_resource type="Texture2D" uid="uid://c4ld4a6x53ujc" path="res://caballeros/img/die3.png" id="die3"]
+[ext_resource type="Texture2D" uid="uid://duxhonvgtoa65" path="res://caballeros/img/die4.png" id="die4"]
+[ext_resource type="Texture2D" uid="uid://dewphbra8v60o" path="res://caballeros/img/die5.png" id="die5"]
+[ext_resource type="Texture2D" uid="uid://dts6uwsmm5msg" path="res://caballeros/img/die6.png" id="die6"]
+[ext_resource type="Texture2D" uid="uid://caooa3ej6uoey" path="res://caballeros/img/die7.png" id="die7"]
+[ext_resource type="Texture2D" uid="uid://ccty4xiarghs2" path="res://caballeros/img/die8.png" id="die8"]
+[ext_resource type="Texture2D" uid="uid://d4eq1cyixfyjx" path="res://caballeros/img/die9.png" id="die9"]
+[ext_resource type="Texture2D" uid="uid://bixmjguicjn7p" path="res://caballeros/img/die10.png" id="die10"]
+
+[sub_resource type="SpriteFrames" id="frames"]
+animations = [
+{
+"name": &"atacar",
 "loop": true,
+"speed": 12.0,
+"frames": [
+{"texture": ExtResource("atk1")},
+{"texture": ExtResource("atk2")},
+{"texture": ExtResource("atk3")},
+{"texture": ExtResource("atk4")},
+{"texture": ExtResource("atk5")},
+{"texture": ExtResource("atk6")},
+{"texture": ExtResource("atk7")},
+{"texture": ExtResource("atk8")},
+{"texture": ExtResource("atk9")},
+{"texture": ExtResource("atk10")}
+]
+},
+{
 "name": &"default",
-"speed": 5.0
-}]
+"loop": true,
+"speed": 12.0,
+"frames": [
+{"texture": ExtResource("cam1")},
+{"texture": ExtResource("cam2")},
+{"texture": ExtResource("cam3")},
+{"texture": ExtResource("cam4")},
+{"texture": ExtResource("cam5")},
+{"texture": ExtResource("cam6")},
+{"texture": ExtResource("cam7")},
+{"texture": ExtResource("cam8")},
+{"texture": ExtResource("cam9")},
+{"texture": ExtResource("cam10")}
+]
+},
+{
+"name": &"morir",
+"loop": false,
+"speed": 10.0,
+"frames": [
+{"texture": ExtResource("die1")},
+{"texture": ExtResource("die2")},
+{"texture": ExtResource("die3")},
+{"texture": ExtResource("die4")},
+{"texture": ExtResource("die5")},
+{"texture": ExtResource("die6")},
+{"texture": ExtResource("die7")},
+{"texture": ExtResource("die8")},
+{"texture": ExtResource("die9")},
+{"texture": ExtResource("die10")}
+]
+}
+]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cw3dm"]
+[sub_resource type="RectangleShape2D" id="col_body"]
 size = Vector2(49.75, 74.0625)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg8t7"]
-size = Vector2(71, 111)
+[sub_resource type="RectangleShape2D" id="col_area"]
+size = Vector2(179.5, 165)
 
-[node name="Caballeros" type="CharacterBody2D" unique_id=432824271]
-script = ExtResource("1_e2vmc")
+[node name="Caballeros" type="CharacterBody2D"]
+script = ExtResource("1_script")
 
-[node name="ani_ene_dyn" type="AnimatedSprite2D" parent="." unique_id=1392003651]
-position = Vector2(268, 607)
-scale = Vector2(0.256, 0.23456785)
-sprite_frames = SubResource("SpriteFrames_wosiq")
+[node name="ani_ene_dyn" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("frames")
+animation = &"default"
+position = Vector2(0, 0)
+scale = Vector2(1, 1)
 
-[node name="col_ene_dyn" type="CollisionShape2D" parent="." unique_id=453998883]
-position = Vector2(269.125, 607.03125)
-shape = SubResource("RectangleShape2D_cw3dm")
+[node name="col_ene_dyn" type="CollisionShape2D" parent="."]
+shape = SubResource("col_body")
+position = Vector2(0, 0)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1280654557]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1211920631]
-position = Vector2(269.5, 592.5)
-shape = SubResource("RectangleShape2D_dg8t7")
-
-[node name="detectorIzquierdo" type="RayCast2D" parent="." unique_id=1518577121]
-position = Vector2(231, 497)
+[node name="detectorIzquierdo" type="RayCast2D" parent="."]
+position = Vector2(-76, -65)
 target_position = Vector2(-1, 151)
 
-[node name="detectorDerecho" type="RayCast2D" parent="." unique_id=822987077]
-position = Vector2(304, 503)
-target_position = Vector2(-3, 150)
+[node name="detectorDerecho" type="RayCast2D" parent="."]
+position = Vector2(125, -68)
+target_position = Vector2(2, 148)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("col_area")
+position = Vector2(29.25, 3)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
