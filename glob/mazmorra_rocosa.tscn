@@ -18,6 +18,7 @@ size = Vector2(28.25, 66)
 
 [node name="puerta" parent="." unique_id=417102546 instance=ExtResource("4_wx65p")]
 position = Vector2(949, 145)
+siguiente_escena = "uid://cm7kj1hao62jb"
 
 [node name="Caballeros" parent="." unique_id=432824271 groups=["enemigos"] instance=ExtResource("5_cqr48")]
 z_index = 1

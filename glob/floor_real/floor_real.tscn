@@ -338,13 +338,13 @@ position = Vector2(399, 405)
 position = Vector2(764, 288)
 
 [node name="Player" parent="." unique_id=1701064074 instance=ExtResource("4_u42u8")]
-position = Vector2(68, -8)
+position = Vector2(201, -1278)
 
 [node name="area_golpe2" type="Area2D" parent="Player" unique_id=451251902]
 position = Vector2(0, -7)
 
 [node name="col_golpe" type="CollisionShape2D" parent="Player/area_golpe2" unique_id=1030883567]
-position = Vector2(94.875, 561)
+position = Vector2(107, 553)
 shape = SubResource("RectangleShape2D_y3s6j")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=115584223]
@@ -359,6 +359,6 @@ position = Vector2(569, -986)
 shape = SubResource("RectangleShape2D_43spt")
 
 [node name="ene_rey" parent="." unique_id=1827934505 instance=ExtResource("6_y3s6j")]
-position = Vector2(646, -880)
+position = Vector2(899, -879)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

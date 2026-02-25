@@ -3,87 +3,62 @@ extends CharacterBody2D
 @export var speed: float = 100.0
 @export var chase_speed: float = 200.0
 @onready var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
+var sentido = 1
+var atacando = false
 
-var sentido := 1
-var atacando := false
+# Nodo del jugador (asegúrate de que el jugador esté en el grupo "jugadores")
+@onready var jugador = get_tree().get_first_node_in_group("jugadores")
 
-var player_detectado := false
-var player: Node2D = null
+func _ready() -> void:
+	$ani_ene_dyn.play("default")
 
-@onready var anim = $ani_ene_dyn
+func _physics_process(delta: float) -> void:
+	# 1. Aplicar Gravedad
+	if not is_on_floor():
+		velocity.y += gravity * delta
+	else:
+		velocity.y = 0
 
-func _ready():
-    anim.play("default")
+	# 2. DETECTAR SI ESTÁ EN LA MISMA PLATAFORMA
+	if jugador:
+		var diff_y = abs(global_position.y - jugador.global_position.y)
+		# Si la diferencia de altura es menor a 30 píxeles, están al mismo nivel
+		if diff_y < 30:
+			# Mirar hacia donde está el jugador
+			if jugador.global_position.x > global_position.x:
+				sentido = 1
+			else:
+				sentido = -1
+			atacando = true
+		else:
+			atacando = false
 
-
-func _physics_process(delta):
-    # Gravedad
-    if not is_on_floor():
-        velocity.y += gravity * delta
-    else:
-        velocity.y = 0
-
-    # ============================
-    # ATAQUE AUTOMÁTICO
-    # ============================
-    if player_detectado and player != null:
-
-        # Mirar hacia el jugador
-        if player.global_position.x < global_position.x:
-            sentido = -1
-        else:
-            sentido = 1
-
-        # Girar sprite
-        $ani_ene_dyn.flip_h = (sentido == -1)
-
-        velocity.x = sentido * chase_speed
-
-        if not atacando:
-            atacando = true
-            anim.play("atacar")
-
-        move_and_slide()
-        return
-
-    # ============================
-    # PATRULLA
-    # ============================
-    if sentido == 1 and (is_on_wall() or not $detectorDerecho.is_colliding()):
-        sentido = -1
-    elif sentido == -1 and (is_on_wall() or not $detectorIzquierdo.is_colliding()):
-        sentido = 1
-
-    velocity.x = sentido * speed
-
-    # Girar sprite
-    $ani_ene_dyn.flip_h = (sentido == -1)
-
-    move_and_slide()
+	# 3. Lógica de patrulla (Solo si no está atacando)
+	if not atacando:
+		if sentido == 1 and (is_on_wall() or not $detectorDerecho.is_colliding()):
+			sentido = -1
+		elif sentido == -1 and (is_on_wall() or not $detectorIzquierdo.is_colliding()):
+			sentido = 1
+		velocity.x = sentido * speed
+	else:
+		# Si está atacando, va más rápido y no se detiene en los bordes
+		velocity.x = sentido * chase_speed
+		# Opcional: Si quieres que NO se caiga de la plataforma al atacar, 
+		# añade aquí la misma lógica de los detectores.
+	
+	# 4. Girar el sprite
+	$ani_ene_dyn.flip_h = (sentido == -1)
 
 
-func _on_area_2d_body_entered(body):
-    if body.is_in_group("jugadores"):
-        player_detectado = true
-        player = body
+	# 5. Mover
+	move_and_slide()
 
 
-func _on_area_2d_body_exited(body):
-    if body == player:
-        player_detectado = false
-        player = null
-        atacando = false
-        anim.play("default")
-
-
-func _on_ani_ene_dyn_animation_finished():
-    if anim.animation == "atacar":
-        if player_detectado and player != null:
-            anim.play("atacar")
-        else:
-            atacando = false
-            anim.play("default")
-
-
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		# Solo matamos al jugador si el jugador NO está atacando
+		if not body.is_attacking: 
+			body.morir()
+		
 func morir_enemigo():
-    queue_free()
+	queue_free() # Esto elimina al caballero del juego

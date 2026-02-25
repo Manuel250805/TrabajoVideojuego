@@ -11,8 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://drbv4l77i2syu" path="res://player/img/idle1.png" id="8_pbfsw"]
 [ext_resource type="Texture2D" uid="uid://dent0dxxi1n5j" path="res://player/img/run1.png" id="9_5tmop"]
 [ext_resource type="Texture2D" uid="uid://bgpobn0tvnwmq" path="res://player/img/muerte2 (4).png" id="9_32hag"]
-[ext_resource type="Texture2D" uid="uid://drbv4l77i2syu" path="res://player/img/idle1.png" id="8_pbfsw"]
-[ext_resource type="Texture2D" uid="uid://dent0dxxi1n5j" path="res://player/img/run1.png" id="9_5tmop"]
 [ext_resource type="Texture2D" uid="uid://vm3imn2xyrkf" path="res://player/img/run2.png" id="10_7ahtn"]
 [ext_resource type="Texture2D" uid="uid://dw0fgmwjmyok3" path="res://player/img/run3.png" id="11_7lmhl"]
 [ext_resource type="Texture2D" uid="uid://r5w826st16k4" path="res://player/img/run4.png" id="12_dx0e4"]
@@ -106,9 +104,7 @@ z_index = 1
 position = Vector2(59.999996, 550)
 scale = Vector2(0.5456774, 0.5427385)
 sprite_frames = SubResource("SpriteFrames_gocmw")
-animation = &"attack"
-frame = 2
-frame_progress = 1.0
+animation = &"morir"
 speed_scale = 0.8
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=158838287]
