@@ -12,13 +12,12 @@ var is_attacking: bool = false
 
 @onready var anim = $ani_player
 @onready var contador: Control = $CanvasLayer/Contador
-var monedas: int = 0
+static var monedas = 0
 
 func _ready() -> void:
 	add_to_group("player")
 	if contador:
-		contador.actualizar(0)
-
+		contador.actualizar(monedas)
 func _physics_process(delta):
 	# 1. GRAVEDAD
 	if not is_on_floor():
@@ -35,14 +34,14 @@ func _physics_process(delta):
 
 	# 3. MOVIMIENTO (Solo si no está atacando)
 	if not is_attacking:
-		var direction = Input.get_axis("ui_left", "ui_right")
+		var direction = Input.get_axis("izquierda", "derecha")
 		velocity.x = direction * speed
 
 		if direction != 0:
 			anim.flip_h = direction < 0
 
 		# SALTO
-		if Input.is_action_just_pressed("ui_accept") and jump_count < max_jumps:
+		if Input.is_action_just_pressed("saltar") and jump_count < max_jumps:
 			velocity.y = jump_force
 			jump_count += 1
 

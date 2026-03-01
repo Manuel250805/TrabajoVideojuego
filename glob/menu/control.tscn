@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://du2oplwgosc77"]
 
 [ext_resource type="Texture2D" uid="uid://wl84k8mm8yoh" path="res://menu/img/menu_glob.png" id="2_gtt4f"]
+[ext_resource type="Script" uid="uid://cvesy2menulyk" path="res://menu/btn_jugar.gd" id="3_3rpah"]
 [ext_resource type="FontFile" uid="uid://42gtj58l4l40" path="res://menu/menu.otf" id="3_dmjxn"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_gtt4f"]
@@ -48,9 +49,13 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_dmjxn")
 theme_override_font_sizes/font_size = 25
 text = "Jugar"
+script = ExtResource("3_3rpah")
 
 [node name="btn_salir" type="Button" parent="vbox_menu" unique_id=234168628]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_dmjxn")
 theme_override_font_sizes/font_size = 25
 text = "Salir"
+
+[connection signal="pressed" from="vbox_menu/btn_jugar" to="vbox_menu/btn_jugar" method="_on_pressed"]
+[connection signal="pressed" from="vbox_menu/btn_salir" to="vbox_menu/btn_jugar" method="_on_btn_salir_pressed"]

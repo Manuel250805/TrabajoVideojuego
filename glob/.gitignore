@@ -1,3 +1,26 @@
+<<<<<<< HEAD
+# --- Godot 4+ específicos ---
+.godot/
+.import/
+*.import
+export_presets.cfg
+
+# --- Binarios y Ejecutables ---
+*.pck
+*.exe
+*.zip
+*.o
+*.obj
+build/
+dist/
+
+# --- Otros ---
+.nomedia
+*.translation
+.mono/
+mono_crash.*.json
+=======
 # Godot 4+ specific ignores
 .godot/
 /android/
+>>>>>>> 9c83d51 (actualizacion juego)

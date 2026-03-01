@@ -149,7 +149,7 @@ animations = [{
 size = Vector2(50.550903, 72.84156)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4q6yk"]
-size = Vector2(90, 111.375)
+size = Vector2(99, 111.375)
 
 [node name="ene_rey" type="CharacterBody2D" unique_id=1827934505]
 position = Vector2(47, 45)
@@ -159,17 +159,17 @@ script = ExtResource("1_gkcop")
 position = Vector2(18.250004, -3.500002)
 scale = Vector2(1.5793651, 1.6516855)
 sprite_frames = SubResource("SpriteFrames_fep0l")
-animation = &"died"
+animation = &"attack"
 
 [node name="col_ene_rey" type="CollisionShape2D" parent="." unique_id=306589722]
-position = Vector2(31.5, 14.720505)
+position = Vector2(22, 1)
 scale = Vector2(1.3253968, 1.3651686)
 shape = SubResource("RectangleShape2D_lxoi1")
 
 [node name="area_ene_rey" type="Area2D" parent="." unique_id=1442961527]
 
 [node name="col_ene_rey" type="CollisionShape2D" parent="area_ene_rey" unique_id=1196137668]
-position = Vector2(25, 9.6875)
+position = Vector2(27, 3)
 shape = SubResource("RectangleShape2D_4q6yk")
 
 [node name="detectorDerecho" type="RayCast2D" parent="." unique_id=2022971962]
@@ -177,7 +177,7 @@ position = Vector2(-24, 5)
 target_position = Vector2(0, 70)
 
 [node name="detectorIzquierdo" type="RayCast2D" parent="." unique_id=1734974504]
-position = Vector2(73, 4)
+position = Vector2(79, -3)
 target_position = Vector2(0, 72)
 
 [connection signal="body_entered" from="area_ene_rey" to="." method="_on_area_ene_rey_body_entered"]

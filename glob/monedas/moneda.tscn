@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://fe1gh4xxmasn"]
+
+[ext_resource type="Texture2D" uid="uid://b5bagajdrfmh2" path="res://monedas/img/moneda13.png" id="1_5hm3r"]
+[ext_resource type="Script" uid="uid://2mjmox30ktlk" path="res://monedas/moneda.gd" id="1_mqv70"]
+[ext_resource type="Texture2D" uid="uid://inoux6etfhw2" path="res://monedas/img/moneda14.png" id="2_mqv70"]
+[ext_resource type="Texture2D" uid="uid://f75r5hlydji2" path="res://monedas/img/moneda15.png" id="3_ymdof"]
+[ext_resource type="Texture2D" uid="uid://dn6g7et6f547b" path="res://monedas/img/moneda16.png" id="4_bynjc"]
+[ext_resource type="Texture2D" uid="uid://c5q0nlld1xecx" path="res://monedas/img/moneda17.png" id="5_qxd4h"]
+[ext_resource type="Texture2D" uid="uid://fkw7ttqp7ju8" path="res://monedas/img/moneda18.png" id="6_c3i8c"]
+[ext_resource type="Texture2D" uid="uid://f2wkytf43op6" path="res://monedas/img/moneda6.png" id="7_pw6ej"]
+[ext_resource type="Texture2D" uid="uid://cyko8mqrdsg50" path="res://monedas/img/moneda7.png" id="8_r05lh"]
+[ext_resource type="Texture2D" uid="uid://dejfq5ngd2bnd" path="res://monedas/img/moneda8.png" id="9_safjm"]
+[ext_resource type="Texture2D" uid="uid://bjh1fhqxfx2pf" path="res://monedas/img/moneda9.png" id="10_rl0uc"]
+[ext_resource type="Texture2D" uid="uid://u1p2wmdrhtoc" path="res://monedas/img/moneda10.png" id="11_35bja"]
+[ext_resource type="Texture2D" uid="uid://cj5c226ncvobb" path="res://monedas/img/moneda11.png" id="12_gyui6"]
+[ext_resource type="Texture2D" uid="uid://b1y54p0t7fd1w" path="res://monedas/img/moneda12.png" id="13_7c8ul"]
+[ext_resource type="Texture2D" uid="uid://bokdo0xmk75fx" path="res://monedas/img/moneda1.png" id="14_xv7dp"]
+[ext_resource type="Texture2D" uid="uid://beai70wldtcvk" path="res://monedas/img/moneda2.png" id="15_lkf65"]
+[ext_resource type="Texture2D" uid="uid://dtn47ebovcpdg" path="res://monedas/img/moneda3.png" id="16_tes01"]
+[ext_resource type="Texture2D" uid="uid://bf0rc7k4d82lr" path="res://monedas/img/moneda4.png" id="17_l2tgj"]
+[ext_resource type="Texture2D" uid="uid://pg6mv303j2u3" path="res://monedas/img/moneda5.png" id="18_rs8wg"]
+[ext_resource type="AudioStream" uid="uid://c824g3boij1f0" path="res://monedas/moneda.mp3" id="20_ymdof"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kihup"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("1_5hm3r")
+}, {
+"duration": 0.5,
+"texture": ExtResource("2_mqv70")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_ymdof")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_bynjc")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_qxd4h")
+}, {
+"duration": 0.5,
+"texture": ExtResource("6_c3i8c")
+}, {
+"duration": 0.5,
+"texture": ExtResource("7_pw6ej")
+}, {
+"duration": 0.5,
+"texture": ExtResource("8_r05lh")
+}, {
+"duration": 0.5,
+"texture": ExtResource("9_safjm")
+}, {
+"duration": 0.5,
+"texture": ExtResource("10_rl0uc")
+}, {
+"duration": 0.5,
+"texture": ExtResource("11_35bja")
+}, {
+"duration": 0.5,
+"texture": ExtResource("12_gyui6")
+}, {
+"duration": 0.5,
+"texture": ExtResource("13_7c8ul")
+}, {
+"duration": 0.5,
+"texture": ExtResource("14_xv7dp")
+}, {
+"duration": 0.5,
+"texture": ExtResource("15_lkf65")
+}, {
+"duration": 0.5,
+"texture": ExtResource("16_tes01")
+}, {
+"duration": 0.5,
+"texture": ExtResource("17_l2tgj")
+}, {
+"duration": 0.5,
+"texture": ExtResource("18_rs8wg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_phy07"]
+radius = 24.0
+height = 60.0
+
+[node name="moneda" type="Area2D" unique_id=1718205296]
+script = ExtResource("1_mqv70")
+
+[node name="ani_moneda" type="AnimatedSprite2D" parent="." unique_id=643392656]
+position = Vector2(-27, 32.25)
+scale = Vector2(0.5, 0.5359712)
+sprite_frames = SubResource("SpriteFrames_kihup")
+frame_progress = 0.30766454
+
+[node name="col_moneda" type="CollisionShape2D" parent="." unique_id=1013420233]
+position = Vector2(-28, 31)
+shape = SubResource("CapsuleShape2D_phy07")
+
+[node name="audio_moneda" type="AudioStreamPlayer2D" parent="." unique_id=1891582074]
+stream = ExtResource("20_ymdof")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

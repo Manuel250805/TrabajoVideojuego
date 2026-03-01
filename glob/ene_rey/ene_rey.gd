@@ -2,23 +2,27 @@ extends CharacterBody2D
 
 var atacando : bool = false
 var esta_muerto : bool = false
+var player:String="player"
+var run:String="run"
+var attack :String="attack"
+var died :String="died"
+var monitoring :String="monitoring"
 @onready var jugador = get_tree().get_first_node_in_group("player")
-
-func _ready() -> void:
-	$ani_ene_rey.play("run")
-
-func _on_area_ene_rey_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		if body.is_attacking:
-			morir_enemigo()
-		else:
-			body.morir()
-
 @onready var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 @export var speed = 100
 @export var rango_ataque = 150 # Distancia para empezar a atacar
 
 var sentido = 1
+
+func _ready() -> void:
+	$ani_ene_rey.play(run)
+
+func _on_area_ene_rey_body_entered(body: Node2D) -> void:
+	if body.is_in_group(player):
+		if body.is_attacking:
+			morir_enemigo()
+		else:
+			body.morir()
 
 func _physics_process(delta: float) -> void:
 	if esta_muerto:
@@ -38,10 +42,10 @@ func _physics_process(delta: float) -> void:
 	# 3. Aplicar movimiento y animación
 	if atacando:
 		velocity.x = 0
-		$ani_ene_rey.play("attack")
+		$ani_ene_rey.play(attack)
 	else:
 		velocity.x = sentido * speed
-		$ani_ene_rey.play("run")
+		$ani_ene_rey.play(run)
 		$ani_ene_rey.flip_h = (sentido == -1)
 
 	move_and_slide()
@@ -63,7 +67,7 @@ func detectar_jugador():
 			atacando = false
 	else:
 		# 2. Si es Nil, intentamos buscarlo de nuevo en el grupo
-		jugador = get_tree().get_first_node_in_group("player")
+		jugador = get_tree().get_first_node_in_group(player)
 		atacando = false # Si no hay jugador, no podemos estar atacando
 
 func morir_enemigo():
@@ -74,9 +78,9 @@ func morir_enemigo():
 	# Desactivamos colisiones para que no moleste al morir
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(1, false)
-	$area_ene_rey.set_deferred("monitoring", false)
+	$area_ene_rey.set_deferred(monitoring, false)
 	
-	$ani_ene_rey.play("died")
+	$ani_ene_rey.play(died)
 	# Si por alguna razón la animación no avisa que terminó, 
 	# ponemos un timer de seguridad para borrarlo
 	await get_tree().create_timer(1.5).timeout

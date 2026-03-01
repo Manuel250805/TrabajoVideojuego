@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dgxoefjy7s2q1"]
 
 [ext_resource type="Script" uid="uid://drxa3xkcbmyov" path="res://contador_monedas/contador.gd" id="1_q0ngr"]
-[ext_resource type="Texture2D" uid="uid://bokdo0xmk75fx" path="res://moneda_claudia/img/moneda1.png" id="2_ubwpd"]
+[ext_resource type="Texture2D" uid="uid://bokdo0xmk75fx" path="res://monedas/img/moneda1.png" id="2_ubwpd"]
 
 [node name="Contador" type="Control" unique_id=2041352240]
 layout_mode = 3

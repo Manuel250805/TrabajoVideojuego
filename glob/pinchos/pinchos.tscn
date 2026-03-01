@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ktnra3n38yr2"]
 
 [ext_resource type="Script" uid="uid://bxgh4hxu3xixf" path="res://pinchos/pinchos.gd" id="1_0e48y"]
-[ext_resource type="Texture2D" uid="uid://brpuq8aq7756o" path="res://plataforma_alejandro/plataformas_grises (1).png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://brpuq8aq7756o" path="res://plataforma_sombria/img/plataformas_grises (1).png" id="1_wtcfe"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ntt2e"]
 

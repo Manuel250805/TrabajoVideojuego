@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cm7kj1hao62jb"]
+
+[ext_resource type="PackedScene" uid="uid://dvq75dis5fiyy" path="res://floor_mazmorra_sombria/floor_mazmorra.tscn" id="1_c8v0t"]
+[ext_resource type="PackedScene" uid="uid://ds45y1hrqf8dy" path="res://caballeros/caballeros.tscn" id="2_terbq"]
+[ext_resource type="PackedScene" uid="uid://fe1gh4xxmasn" path="res://monedas/moneda.tscn" id="3_terbq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8v0t"]
+size = Vector2(958, 18)
+
+[node name="mazmorra_oscura" type="Node2D" unique_id=1518120767]
+metadata/_edit_vertical_guides_ = [-2643.0]
+metadata/_edit_horizontal_guides_ = [-1213.0]
+
+[node name="floor_mazmorra" parent="." unique_id=1850895471 instance=ExtResource("1_c8v0t")]
+z_index = 1
+
+[node name="Caballeros" parent="." unique_id=390737071 instance=ExtResource("2_terbq")]
+z_index = 1
+position = Vector2(666, -44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=313975989]
+z_index = 1
+position = Vector2(577, 46)
+shape = SubResource("RectangleShape2D_c8v0t")
+
+[node name="moneda" parent="." unique_id=1718205296 instance=ExtResource("3_terbq")]
+z_index = 1
+position = Vector2(468, 147)
+id_moneda = 2
+
+[node name="moneda2" parent="." unique_id=1171015042 instance=ExtResource("3_terbq")]
+z_index = 1
+position = Vector2(668, 251)
+id_moneda = 3

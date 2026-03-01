@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bxojndpva1dva" path="res://floor_real/floor_real.gd" id="1_43spt"]
 [ext_resource type="Texture2D" uid="uid://bq57ts7pxfe8y" path="res://floor_real/img/mazmorra_real_claudia.jpeg" id="1_cxrwt"]
-[ext_resource type="Texture2D" uid="uid://dm3f63vqv0lkm" path="res://plataformas/img/plataformas.png" id="2_cxrwt"]
-[ext_resource type="PackedScene" uid="uid://fe1gh4xxmasn" path="res://moneda.tscn" id="3_ipth5"]
+[ext_resource type="Texture2D" uid="uid://dm3f63vqv0lkm" path="res://floor_real/plataformas-real/img/plataformas.png" id="2_cxrwt"]
+[ext_resource type="PackedScene" uid="uid://fe1gh4xxmasn" path="res://monedas/moneda.tscn" id="3_ipth5"]
 [ext_resource type="PackedScene" uid="uid://ckoib54bakbeh" path="res://player/player.tscn" id="4_u42u8"]
 [ext_resource type="PackedScene" uid="uid://ccr1lgolfvir7" path="res://ene_rey/ene_rey.tscn" id="6_y3s6j"]
 
@@ -322,7 +322,7 @@ size = Vector2(1089, 18)
 z_index = 1
 script = ExtResource("1_43spt")
 
-[node name="MazmorraRealClaudia" type="Sprite2D" parent="." unique_id=502590388]
+[node name="MazmorraReal" type="Sprite2D" parent="." unique_id=502590388]
 position = Vector2(575.49994, -193)
 scale = Vector2(1.1103516, 3.5306122)
 texture = ExtResource("1_cxrwt")
@@ -333,12 +333,14 @@ shape = SubResource("RectangleShape2D_ipth5")
 
 [node name="moneda1" parent="." unique_id=1718205296 instance=ExtResource("3_ipth5")]
 position = Vector2(399, 405)
+id_moneda = 4
 
 [node name="moneda2" parent="." unique_id=811509436 instance=ExtResource("3_ipth5")]
 position = Vector2(764, 288)
+id_moneda = 5
 
 [node name="Player" parent="." unique_id=1701064074 instance=ExtResource("4_u42u8")]
-position = Vector2(201, -1278)
+position = Vector2(108, 5)
 
 [node name="area_golpe2" type="Area2D" parent="Player" unique_id=451251902]
 position = Vector2(0, -7)

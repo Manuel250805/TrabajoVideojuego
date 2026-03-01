@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dgxoefjy7s2q1"]
+
+[ext_resource type="Script" uid="uid://drxa3xkcbmyov" path="res://contador_monedas/contador.gd" id="1_q0ngr"]
+[ext_resource type="Texture2D" uid="uid://bokdo0xmk75fx" path="res://moneda_claudia/img/moneda1.png" id="2_ubwpd"]
+
+[node name="Contador" type="Control" unique_id=2041352240]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q0ngr")
+
+[node name="hbox_mon" type="HBoxContainer" parent="." unique_id=1363640733]
+layout_mode = 0
+offset_left = 12.0
+offset_right = 52.0
+offset_bottom = 40.0
+
+[node name="imagen" type="Sprite2D" parent="." unique_id=233403857]
+position = Vector2(67, 36)
+scale = Vector2(0.46774194, 0.46402878)
+texture = ExtResource("2_ubwpd")
+
+[node name="lbl_contador_mon" type="Label" parent="." unique_id=1712774509]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.021000002
+anchor_bottom = 0.048
+offset_left = 52.0
+offset_top = 25.0
+offset_right = 55.808
+offset_bottom = 16.896
+horizontal_alignment = 1
+vertical_alignment = 1
