@@ -35,11 +35,11 @@ La respuesta es simple: **a los tres nos encantaban los juegos de este estilo**.
 
 ## 2. Player (Glob)
 Glob ha sido diseñado como un héroe humilde pero valiente que utiliza su forma circular para navegar por la mazmorra de manera dinámica y efectiva:
-* **Controles
-  a -> izquierda
-  W -> saltar
-  d -> derecha
-  p ->atacar
+* **Controles**
+  - a -> izquierda:
+  - W -> saltar
+  - d -> derecha
+  - p ->atacar
 * **Salto y Doble Salto:** Para enfatizar su agilidad como "pelota", Glob permite un segundo impulso en el aire. El código detecta si el personaje ya no está en el suelo y permite una segunda activación de la fuerza de salto, lo que facilita la superación de trampas y plataformas elevadas.
 * **Ataque (El Puñetazo):** Aunque ha sido transformado, Glob conserva su determinación y se defiende a puñetazos. Esta habilidad activa un estado de ataque (`is_attacking`) que es la única forma de derrotar a los enemigos.
 * **Interacción con Enemigos:** Si Glob toca a un enemigo mientras realiza su animación de puñetazo, el enemigo ejecuta su lógica de `morir_enemigo()`. Si el contacto ocurre fuera de este estado, Glob es derrotado y el nivel se reinicia automáticamente.
