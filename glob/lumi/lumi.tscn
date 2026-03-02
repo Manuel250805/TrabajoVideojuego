@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://kwyh7e7x6ng1"]
+
+[ext_resource type="Script" uid="uid://covapyai6jvyj" path="res://lumi/lumi.gd" id="1_mpcwq"]
+[ext_resource type="Texture2D" uid="uid://exkcs38vprmj" path="res://lumi/img/lumi.png" id="1_nyp1k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpcwq"]
+size = Vector2(40, 121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dan2e"]
+size = Vector2(118, 140)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=731072700]
+script = ExtResource("1_mpcwq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1427081864]
+position = Vector2(447, 540.5)
+shape = SubResource("RectangleShape2D_mpcwq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=866617437]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=200518451]
+position = Vector2(424, 536)
+shape = SubResource("RectangleShape2D_dan2e")
+
+[node name="Lumi" type="Sprite2D" parent="Area2D" unique_id=446240211]
+position = Vector2(441, 537)
+texture = ExtResource("1_nyp1k")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

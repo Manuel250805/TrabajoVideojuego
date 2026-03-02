@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://degmce53qqfxj"]
+
+[ext_resource type="Texture2D" uid="uid://1034xeo6cmp7" path="res://victoria/img/victoria.jpg" id="1_4386u"]
+[ext_resource type="AudioStream" uid="uid://dmcsamqj6ukuv" path="res://victoria/audio/victoria.mp3" id="1_na2d1"]
+[ext_resource type="FontFile" uid="uid://42gtj58l4l40" path="res://menu/menu.otf" id="2_5rbd2"]
+[ext_resource type="Script" uid="uid://45i7ob2tdjuq" path="res://victoria/audio_victoria.gd" id="2_dh7no"]
+[ext_resource type="Script" uid="uid://cry2r0yqf2gwa" path="res://victoria/btn_menu.gd" id="3_na2d1"]
+
+[node name="Control" type="Control" unique_id=575194632]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 6.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="audio_victoria" type="AudioStreamPlayer2D" parent="." unique_id=1921549926]
+position = Vector2(843, 538)
+stream = ExtResource("1_na2d1")
+parameters/looping = true
+script = ExtResource("2_dh7no")
+
+[node name="Victoria" type="Sprite2D" parent="." unique_id=352325000]
+position = Vector2(567, 327)
+scale = Vector2(0.71517414, 1)
+texture = ExtResource("1_4386u")
+
+[node name="vbox_menu" type="VBoxContainer" parent="." unique_id=284975918]
+layout_mode = 0
+offset_left = 843.0
+offset_top = 483.0
+offset_right = 1064.0
+offset_bottom = 610.0
+
+[node name="lbl_opciones" type="Label" parent="vbox_menu" unique_id=53752741]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.78431374, 0.34117648, 1)
+theme_override_fonts/font = ExtResource("2_5rbd2")
+theme_override_font_sizes/font_size = 50
+text = "Opciones"
+
+[node name="btn_menu" type="Button" parent="vbox_menu" unique_id=145643969]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5rbd2")
+theme_override_font_sizes/font_size = 25
+text = "Menú"
+script = ExtResource("3_na2d1")
+
+[node name="btn_salir" type="Button" parent="vbox_menu" unique_id=1891223289]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5rbd2")
+theme_override_font_sizes/font_size = 25
+text = "Salir"
+
+[connection signal="pressed" from="vbox_menu/btn_menu" to="vbox_menu/btn_menu" method="_on_pressed"]
+[connection signal="pressed" from="vbox_menu/btn_salir" to="vbox_menu/btn_menu" method="_on_btn_salir_pressed"]
